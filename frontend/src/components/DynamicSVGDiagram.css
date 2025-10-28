@@ -1,0 +1,263 @@
+.dynamic-svg-diagram {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+  padding: 0;
+  border-radius: 0;
+}
+
+.svg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  backdrop-filter: blur(10px);
+  flex-shrink: 0;
+}
+
+.svg-header-left {
+  flex: 1;
+}
+
+.company-name {
+  color: #00d4ff;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.svg-header-center {
+  flex: 2;
+  text-align: center;
+}
+
+.svg-header-center h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+.svg-header-right {
+  flex: 1;
+  text-align: right;
+}
+
+.current-time {
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'Courier New', monospace;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.svg-container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  padding: 5px;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.svg-container svg {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1.2);
+  transform-origin: center center;
+}
+
+/* SVG 내부 텍스트 스타일 강화 */
+/* 제목 텍스트는 원본 폰트 유지 */
+.svg-container svg text:not(#text6):not(#text7):not(#text8) {
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+}
+
+/* 동적으로 업데이트되는 값들에 애니메이션 효과 */
+.svg-container svg text[id^="text"] {
+  transition: fill 0.3s ease;
+}
+
+/* 펌프 팝업 스타일 */
+.pump-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.pump-popup {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.pump-popup-header {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.pump-popup-header h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.popup-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.popup-close:hover {
+  transform: scale(1.2);
+}
+
+.pump-popup-body {
+  padding: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.pump-info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.pump-info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.info-value {
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.status-running {
+  color: #10b981;
+  font-weight: bold;
+}
+
+.status-stopped {
+  color: #6b7280;
+}
+
+.pump-popup-controls {
+  padding: 20px;
+  background: #f9fafb;
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-pump-start,
+.btn-pump-stop {
+  flex: 1;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-pump-start {
+  background: #10b981;
+  color: white;
+}
+
+.btn-pump-start:hover:not(:disabled) {
+  background: #059669;
+}
+
+.btn-pump-start:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.btn-pump-stop {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-pump-stop:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.btn-pump-stop:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .svg-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .svg-header-left,
+  .svg-header-center,
+  .svg-header-right {
+    text-align: center;
+  }
+
+  .svg-header-center h2 {
+    font-size: 20px;
+  }
+
+  .pump-popup {
+    width: 95%;
+    max-width: none;
+  }
+
+  .pump-popup-controls {
+    flex-direction: column;
+  }
+}

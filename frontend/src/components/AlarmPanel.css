@@ -1,0 +1,137 @@
+.alarm-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+  overflow: auto;
+}
+
+.alarm-header {
+  background: #1e293b;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  border-left: 4px solid #ef4444;
+}
+
+.alarm-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 0.75rem;
+}
+
+.alarm-summary {
+  display: flex;
+  gap: 1rem;
+}
+
+.summary-item {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.summary-item.critical {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.summary-item.warning {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.summary-item.info {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.alarm-list {
+  background: #1e293b;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  flex: 1;
+  overflow: auto;
+}
+
+.no-alarms {
+  text-align: center;
+  padding: 3rem;
+  color: #94a3b8;
+  font-size: 1.125rem;
+}
+
+.alarm-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.75rem;
+  border: 2px solid;
+  transition: all 0.2s;
+}
+
+.alarm-item:last-child {
+  margin-bottom: 0;
+}
+
+.alarm-item.alarm-critical {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+}
+
+.alarm-item.alarm-warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: #f59e0b;
+}
+
+.alarm-item.alarm-info {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: #10b981;
+}
+
+.alarm-item.acknowledged {
+  opacity: 0.6;
+}
+
+.alarm-icon {
+  font-size: 2rem;
+}
+
+.alarm-content {
+  flex: 1;
+}
+
+.alarm-message {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-bottom: 0.25rem;
+}
+
+.alarm-time {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.alarm-actions button {
+  padding: 0.5rem 1rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.alarm-actions button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+
+
+

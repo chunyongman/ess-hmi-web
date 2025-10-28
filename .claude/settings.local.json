@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/my/Desktop/HMI/PID 화면구성/**)",
+      "Bash(source venv/Scripts/activate)",
+      "Bash(python:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

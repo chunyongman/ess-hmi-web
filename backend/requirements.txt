@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+pymodbus>=3.5.0,<3.6.0
+websockets
+python-multipart
+pydantic
+aiofiles
+
